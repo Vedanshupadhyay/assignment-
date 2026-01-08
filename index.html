@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GTG Perfumes — Assignment</title>
+  <meta name="description" content="Pixel-perfect, responsive implementation of the Figma design using HTML, CSS, and JavaScript." />
+  <!-- Performance: preconnect for fonts if any are used -->
+  <!-- TODO: Insert font links exactly as per Figma (weights and families) -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-wrap">
+      <a href="#" class="brand" aria-label="Home">
+        <img src="assets/Column.svg" alt="Brand Logo" width="120" height="50" decoding="async" />
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#percentages">Stats</a></li>
+          <li><a href="#comparison-table">Compare</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+        <img src="assets/Frame 1000004063.svg" alt="db" width="24" height="24" />
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <a href="#" class="brand">
+          <img src="assets/Column.svg" alt="Brand Logo" width="120" height="32" decoding="async" />
+        </a>
+        <button class="drawer-close" aria-label="Close menu">
+          <img src="assets/Frame 1000004044.svg" alt="" width="24" height="24" />
+        </button>
+      </div>
+      <nav aria-label="Mobile">
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#percentages">Stats</a></li>
+          <li><a href="#comparison-table">Compare</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="drawer-backdrop" hidden></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Introduction">
+    <div class="container hero-wrap">
+      <div class="hero-content">
+        <h1 class="hero-title">GTG Perfumes</h1>
+        <p class="hero-subtitle">Experience signature fragrances crafted to perfection.</p>
+        <a class="btn btn-primary" href="#products">Shop now</a>
+      </div>
+      <picture>
+        <!-- TODO: Provide responsive sources as per Figma export -->
+        <img
+          src="assets/Group 1000004277.png"
+          alt="Featured perfume hero visual"
+          loading="lazy"
+          width="800"
+          height="600"
+        />
+      </picture>
+    </div>
+  </section>
+
+  <!-- Product section -->
+  <section class="product" id="products" aria-label="Featured product">
+    <div class="container product-grid">
+      <!-- Gallery -->
+      <div class="gallery" aria-label="Product gallery">
+        <div class="gallery-stage">
+          <button class="gallery-nav prev" aria-label="Previous image">
+            <img src="assets/Button.svg" alt="" width="22" height="22" />
+          </button>
+
+          <div class="gallery-track" role="group" aria-roledescription="carousel" aria-live="polite">
+            <!-- Slides (JS will manage active state) -->
+            <img
+              class="gallery-slide is-active"
+              src="assets/Group 1000004093.png"
+              alt="GTG Perfume main view 1"
+              width="720"
+              height="720"
+              loading="lazy"
+            />
+            <img
+              class="gallery-slide"
+              src="assets/Group 1000004277.png"
+              alt="GTG Perfume main view 2"
+              width="720"
+              height="720"
+              loading="lazy"
+            />
+            <img
+              class="gallery-slide"
+              src="assets/Group 1000004277.png"
+              alt="GTG Perfume main view 3"
+              width="720"
+              height="720"
+              loading="lazy"
+            />
+          </div>
+
+          <button class="gallery-nav next" aria-label="Next image">
+            <img src="assets/Button-1.svg" alt="" width="22" height="22" />
+          </button>
+        </div>
+
+        <div class="gallery-dots" role="tablist" aria-label="Select image">
+          <button class="dot is-active" aria-label="Slide 1" aria-selected="true"></button>
+          <button class="dot" aria-label="Slide 2"></button>
+          <button class="dot" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="gallery-thumbs" aria-label="Thumbnails">
+          <button class="thumb is-active" data-index="0" aria-label="Thumbnail 1">
+            <img src="assets/Group 1000004277.png" alt="Thumbnail 1" width="112" height="112" loading="lazy" />
+          </button>
+          <button class="thumb" data-index="1" aria-label="Thumbnail 2">
+            <img src="assets/Group 1000004277.png" alt="Thumbnail 2" width="112" height="112" loading="lazy" />
+          </button>
+          <button class="thumb" data-index="2" aria-label="Thumbnail 3">
+            <img src="assets/Group 1000004277.png" alt="Thumbnail 3" width="112" height="112" loading="lazy" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Options and purchase -->
+      <div class="product-info">
+        <h2 class="product-title">GTG Signature Eau de Parfum</h2>
+        <p class="product-desc">
+          <!-- TODO: Replace with copy from Figma -->
+          A balanced blend with top notes that linger and a base that warms through the day.
+        </p>
+
+        <!-- Fragrances -->
+        <fieldset class="radio-group" aria-label="Fragrance options">
+          <legend>Fragrances</legend>
+          <label class="radio">
+            <input type="radio" name="fragrance" value="classic" checked />
+            <span>Classic</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="fragrance" value="citrus" />
+            <span>Citrus</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="fragrance" value="woody" />
+            <span>Woody</span>
+          </label>
+        </fieldset>
+
+        <!-- Purchase type -->
+        <fieldset class="radio-group" aria-label="Purchase type">
+          <legend>Purchase type</legend>
+          <label class="radio">
+            <input type="radio" name="purchase" value="single" checked />
+            <span>Single</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="purchase" value="single-subscription" />
+            <span>Single Subscription</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="purchase" value="double-subscription" />
+            <span>Double Subscription</span>
+          </label>
+        </fieldset>
+
+        <!-- Expandable panels based on selected purchase type -->
+        <div class="subscription-panels" aria-live="polite">
+          <div class="panel panel-single-subscription" hidden>
+            <h3 class="panel-title">Single Subscription details</h3>
+            <ul class="panel-list">
+              <li><strong>Delivery:</strong> Monthly</li>
+              <li><strong>Discount:</strong> 10% off</li>
+              <li><strong>Flexibility:</strong> Pause anytime</li>
+            </ul>
+            <!-- TODO: Insert exact design contents -->
+          </div>
+
+          <div class="panel panel-double-subscription" hidden>
+            <h3 class="panel-title">Double Subscription details</h3>
+            <ul class="panel-list">
+              <li><strong>Delivery:</strong> Monthly, two bottles</li>
+              <li><strong>Discount:</strong> 18% off</li>
+              <li><strong>Bonus:</strong> Early access to new scents</li>
+            </ul>
+            <!-- TODO: Insert exact design contents -->
+          </div>
+        </div>
+
+        <!-- Price and CTA -->
+        <div class="purchase-row">
+          <div class="price-wrap">
+            <!-- TODO: Price style as per Figma -->
+            <span class="price-current">$79</span>
+            <span class="price-compare">$99</span>
+          </div>
+          <a id="addToCart" class="btn btn-primary" href="#" data-base="assets/Button - Large.png">
+            Add to cart
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Percentages section -->
+  <section class="percentages" id="percentages" aria-label="Customer metrics">
+    <div class="container percentages-grid">
+      <div class="percent-card">
+        <span class="percent-number" data-target="84">0%</span>
+        <p class="percent-label">Customers noticed improved longevity</p>
+      </div>
+      <div class="percent-card">
+        <span class="percent-number" data-target="78">0%</span>
+        <p class="percent-label">Prefer GTG over previous brand</p>
+      </div>
+      <div class="percent-card">
+        <span class="percent-number" data-target="92">0%</span>
+        <p class="percent-label">Would recommend to a friend</p>
+      </div>
+      <!-- TODO: Add or adjust cards per Figma -->
+    </div>
+  </section>
+
+  <!-- Comparison table -->
+  <section class="comparison" id="comparison-table" aria-label="Comparison table">
+    <div class="container">
+      <h2>Compare plans</h2>
+      <table class="feature-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Single</th>
+            <th>Single Subscription</th>
+            <th>Double Subscription</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bottle size</td>
+            <td>50ml</td>
+            <td>50ml</td>
+            <td>2 × 50ml</td>
+          </tr>
+          <tr>
+            <td>Refill cycle</td>
+            <td>None</td>
+            <td>Monthly</td>
+            <td>Monthly</td>
+          </tr>
+          <tr>
+            <td>Discount</td>
+            <td>—</td>
+            <td>10%</td>
+            <td>18%</td>
+          </tr>
+          <tr>
+            <td>Bonus perks</td>
+            <td>—</td>
+            <td>Pause anytime</td>
+            <td>Early access</td>
+          </tr>
+          <!-- TODO: Align exact rows/columns with Figma -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#">
+          <img src="assets/Column.svg" alt="Brand Logo" width="120" height="32" decoding="async" />
+        </a>
+        <p class="footer-copy">© GTG Perfumes. All rights reserved.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#percentages">Stats</a></li>
+          <li><a href="#comparison-table">Compare</a></li>
+        </ul>
+      </nav>
+    </div>
+    <a class="back-to-top" href="#top">Back to top</a>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
